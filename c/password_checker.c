@@ -2,6 +2,11 @@
 #include <ctype.h>
 #include <string.h>
 
+// has_lowercase(char *password)
+// Behavior: Scans the password string to check for the presence of lowercase letters
+// Parameters: password - pointer to null-terminated string to check
+// Returns: 1 if at least one lowercase letter is found, 0 otherwise
+// Exceptions: None
 int has_lowercase(char *password) {
     for (int i = 0; password[i]; i++) {
         if (islower(password[i])) {
@@ -11,6 +16,11 @@ int has_lowercase(char *password) {
     return 0;
 }
 
+// has_uppercase(char *password)
+// Behavior: Scans the password string to check for the presence of uppercase letters
+// Parameters: password - pointer to null-terminated string to check
+// Returns: 1 if at least one uppercase letter is found, 0 otherwise
+// Exceptions: None
 int has_uppercase(char *password) {
     for (int i = 0; password[i]; i++) {
         if (isupper(password[i])) {
@@ -20,6 +30,11 @@ int has_uppercase(char *password) {
     return 0;
 }
 
+// has_digit(char *password)
+// Behavior: Scans the password string to check for the presence of numeric digits
+// Parameters: password - pointer to null-terminated string to check
+// Returns: 1 if at least one digit is found, 0 otherwise
+// Exceptions: None
 int has_digit(char *password) {
     for (int i = 0; password[i]; i++) {
         if (isdigit(password[i])) {
@@ -29,6 +44,11 @@ int has_digit(char *password) {
     return 0;
 }
 
+// has_special(char *password)
+// Behavior: Scans the password string to check for the presence of special characters (non-alphanumeric)
+// Parameters: password - pointer to null-terminated string to check
+// Returns: 1 if at least one special character is found, 0 otherwise
+// Exceptions: None
 int has_special(char *password) {
     for (int i = 0; password[i]; i++) {
         if (!isalnum(password[i])) {
@@ -38,6 +58,11 @@ int has_special(char *password) {
     return 0;
 }
 
+// main()
+// Behavior: Prompts user for password input, evaluates password strength based on five criteria (length, lowercase, uppercase, digit, special char), and displays strength score and rating
+// Parameters: None
+// Returns: 0 on successful execution
+// Exceptions: None
 int main() {
     char password[256];
     int score = 0;
